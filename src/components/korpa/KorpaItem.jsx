@@ -2,11 +2,11 @@ import { Card, CardContent, CardHeader, CardMedia, Typography } from '@mui/mater
 import React from 'react';
 
 const KorpaItem = ({skije}) => {
-  return <Card>
-      <CardHeader title={<Typography variant='h2'>{skije.model}</Typography>}/>
-      <CardMedia image={skije.slikaUrl}/>
-       <Typography variant='h6'>
-           {skije.model}
+  return <Card style={{padding:'20px',maxWidth:'400px'}}>
+      <CardHeader title={<Typography variant='h4'>{skije.model}</Typography>}/>
+      <CardMedia style={{height:'400px'}} image={skije.slikaUrl}/>
+       <Typography variant='p'>
+       {skije.specifikacije}
        </Typography>
        <CardContent>{skije.brojPonavljanja}</CardContent>
   </Card>;

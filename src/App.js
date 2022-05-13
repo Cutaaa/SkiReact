@@ -1,5 +1,7 @@
+import { Route, Routes } from 'react-router';
 import './App.css';
 import SkijeItemList from './components/skije/SkijeItemList';
+import KorpaList from './components/korpa/KorpaList';
 import NavBar from './components/navbar/NavBar';
 
 const SKIES = [
@@ -30,8 +32,12 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
+      <Routes>
+       <Route path='/' element={<SkijeItemList skije={SKIES}/>}/>
+       <Route path='/korpa' element={<KorpaList/>}/>
+     </Routes>
       
-     <SkijeItemList skije={SKIES}/>
+     
     </div>
   );
 }

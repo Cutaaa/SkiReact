@@ -34,13 +34,27 @@ const dodajSkije=(skije)=>{
 }
 
 const ukloniSkije=(id)=>{
-    const nadjene=skije.find(s=>s.id===id);
+    const nadjene=skije.findIndex(s=>s.id===id);
     console.log(nadjene);
-    if(!nadjene){
+
+    if(nadjene==-1){
         return;
     }
+
+    const skije=skije[nadjene];
+    
+    if(skije.brojPonavljanja===1){
+
     const filterSkije=skije.filter(s=>s.id!==id);
     setSkije(filterSkije);
+
+    }else{
+    const prevSkije=[...skije];
+    skije.brojPonavljanja-=1;
+    prevSkije[nadjene]=skije;
+    setSkije(prevSkije);
+
+}
     setUkupanBrojSkija(prevValue=>prevValue-1);
 }
 
