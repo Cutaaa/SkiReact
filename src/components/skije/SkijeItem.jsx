@@ -24,7 +24,7 @@ const SkijeItem = ({skije})=> {
 
     return(
         <div className="card" style={design}>
-            <img className="card-img-top" src={skije.slikaUrl} alt="Atomic skije" width={200}/>
+            <img style={{marginTop:'20px'}} className="card-img-top" src={skije.slikaUrl} alt="Atomic skije" width={200}/>
             <div className="card-body">
             <h3 className="card-title">{skije.model}</h3>
             <p className="card-text"> {skije.specifikacije}</p>

@@ -8,7 +8,7 @@ const KorpaList = () => {
     const skijeCtx=useContext(SkijeContext);
     const skije=skijeCtx.skije;
 
-  return <Grid container style={{width:'80%',marginTop:'5rem'}}>
+  return <Grid container style={{width:'100%',marginTop:'6rem'}}>
       {skije.length>0?skije.map(s=>{
           return <Grid style={{margin:'30px'}}  item xs={4} key={s.id}>
               <KorpaItem skije={s}/>
