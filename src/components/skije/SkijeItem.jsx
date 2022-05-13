@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ImPlus, ImMinus } from "react-icons/im";
+import { SkijeContext } from '../../store/SkijeContext';
 
-
-const skijeItem = ({skije})=> {
+const SkijeItem = ({skije})=> {
     const design = {margin: 10, borderStyle: "dashed" };
     
+    const skijeCtx=useContext(SkijeContext);
+
     const addToCart = () => {
-        console.log("add");
+        const s={
+            id:skije.id,
+            model:skije.model,
+            specifikacije:skije.specifikacije,
+            slikaUrl:skije.slikaUrl,
+            brojPonavljanja:1
+        }
+        skijeCtx.dodajSkije(s);
     };
 
     const removeFromCart = () => {
-        console.log("remove");
+        skijeCtx.ukloniSkije(skije.id);
     };
 
     return(
@@ -27,4 +36,4 @@ const skijeItem = ({skije})=> {
 
 }
 
-export default skijeItem;
+export default SkijeItem;
